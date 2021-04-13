@@ -1,18 +1,38 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import * as React from 'react';
+import {View, Text} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import Index from './src/screens/Home';
+import Examples from './src/screens/Examples';
+import VideoEncoder from './src/screens/VideoEncoder';
 
-export default function App() {
+const Stack = createStackNavigator();
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Thesis Project</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: '#3f37c9',
+          },
+          headerTintColor: '#fff',
+          headerTitleAlign: 'center',
+        }}>
+        <Stack.Screen
+          name="ThesisProject"
+          component={Index}
+          options={{headerTitle: 'Thesis Project'}}
+        />
+        <Stack.Screen name="Examples" component={Examples} />
+        <Stack.Screen
+          name="VideoEncoder"
+          component={VideoEncoder}
+          options={{headerTitle: 'Video Encoder'}}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
+export default App;
