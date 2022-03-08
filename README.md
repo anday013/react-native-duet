@@ -4,7 +4,7 @@
 
 ## Thesis Project
 
-This project was developed as the Thesis project to obtain Bachelor degree
+This project was developed as a Thesis project
 
 Thesis Topic: **Functional limitations of React Native and how to overcome them**
 
